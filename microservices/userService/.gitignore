@@ -1,0 +1,15 @@
+# Dependency directory
+node_modules/
+
+# Environment configuration
+.env
+
+# Logs
+*.log
+
+# OS generated files
+.DS_Store
+
+# Editor directories and files
+.vscode/
+
