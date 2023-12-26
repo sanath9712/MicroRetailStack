@@ -1,5 +1,6 @@
 const bcrypt = require('bcryptjs');
-const User = require('../models/User'); // Adjust the path as necessary
+const User = require('../models/User'); 
+const jwt = require('jsonwebtoken');
 
 // User registration
 exports.register = async (req, res) => {
@@ -46,8 +47,15 @@ exports.login = async (req, res) => {
         if (!isMatch) {
             return res.status(400).json({ message: 'Invalid credentials' });
         }
+        
+        // JWT Token
+        const token = jwt.sign(
+          { userId: user._id, email: user.email },
+          process.env.JWT_SECRET,
+          { expiresIn: '1h' }
+      );
 
-        res.status(200).json({ message: 'User logged in successfully' });
+        res.status(200).json({ message: 'User logged in successfully',token });
         // Implement JWT token creation and return it in response for real implementation
     } catch (err) {
         res.status(500).json({ message: err.message });
