@@ -1,0 +1,47 @@
+# Install Homebrew (if not already installed)
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# Install MongoDB Community Edition
+brew tap mongodb/brew
+brew install mongodb-community
+
+# Start MongoDB Service
+brew services start mongodb-community
+
+# Stop MongoDB Service
+brew services stop mongodb-community
+
+# Restart MongoDB Service
+brew services restart mongodb-community
+
+# Check the Status of All Brew Services
+brew services list
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+# Start the MongoDB Shell
+mongosh
+
+# Show All Databases
+show dbs
+
+# Switch to a Specific Database
+use <database_name>
+
+# Show Collections in the Current Database
+show collections
+
+# Insert a Document into a Collection
+db.<collection_name>.insert({key: "value"})
+
+# Find Documents in a Collection
+db.<collection_name>.find()
+
+# Update Documents in a Collection
+db.<collection_name>.update({query}, {$set: {key: "new value"}})
+
+# Delete Documents from a Collection
+db.<collection_name>.remove({query})
+
+# Exit the MongoDB Shell
+exit
