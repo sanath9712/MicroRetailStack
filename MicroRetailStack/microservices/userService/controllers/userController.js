@@ -61,3 +61,30 @@ exports.login = async (req, res) => {
         res.status(500).json({ message: err.message });
     }
 };
+
+
+exports.forgotPassword = async (req, res) => {
+  const { email } = req.body;
+  try {
+      const user = await User.findOne({ email });
+      if (!user) {
+          return res.status(404).json({ message: 'User not found' });
+      }
+
+      // Generate a reset token
+      const token = crypto.randomBytes(20).toString('hex');
+
+      // Set expiration time (e.g., 1 hour)
+      user.passwordResetToken = token;
+      user.passwordResetExpires = Date.now() + 3600000; // 1 hour in milliseconds
+
+      await user.save();
+
+      // Send token via email (implement email sending logic here)
+      // ...
+
+      res.status(200).json({ message: 'Password reset token sent to email' });
+  } catch (err) {
+      res.status(500).json({ message: err.message });
+  }
+};
