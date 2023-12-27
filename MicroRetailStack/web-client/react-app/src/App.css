@@ -1,3 +1,16 @@
+:root {
+  --color-white: #FFFFFF;
+  --color-green: #97B498; /* Adjust the shade of green as needed */
+  --color-black: #000000;
+}
+
+body {
+  background-color: var(--color-white);
+  color: var(--color-black);
+  /* Other global styles */
+}
+
+
 .App {
   text-align: center;
 }
