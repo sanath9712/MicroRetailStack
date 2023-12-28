@@ -4,7 +4,8 @@ import '../css/Footer.css'; // Create and import footer styles
 function Footer() {
     return (
         <footer className="footer">
-            <p>© {new Date().getFullYear()} Eco-Commerce Site</p>
+            <p>© {new Date().getFullYear()} EcoFusionMart</p>
+            <p>Where you can buy imaginary products with imaginary money :)</p>
         </footer>
     );
 }

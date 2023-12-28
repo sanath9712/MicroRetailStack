@@ -1,6 +1,16 @@
 .footer {
-    background-color: var(--color-black);
-    color: var(--color-white);
+    background-color: var(--color-black); /* Adjust the background color as needed */
+    color: var(--color-white); /* Adjust the text color as needed */
     padding: 1rem;
     text-align: center;
+}
+
+.footer p {
+    margin: 5px 0; /* Adjust spacing between paragraphs */
+    font-size: 1rem; /* Adjust font size as needed */
+}
+
+/* Additional styling for the punchline if needed */
+.footer p:last-child {
+    font-style: italic; /* Example: italicize the punchline */
 }
