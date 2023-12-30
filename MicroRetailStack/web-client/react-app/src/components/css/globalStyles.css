@@ -60,3 +60,40 @@
 .popup button:hover {
     background-color: var(--color-dark-green);
 }
+
+html, body {
+  height: 100%; /* Full height for the page */
+  margin: 0; /* Remove default margin */
+}
+
+body {
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  min-height: 100vh; /* Minimum height of viewport */
+}
+
+.main-content {
+  flex: 1; /* Flex grow to take available space */
+  /* Add any additional styling for your main content area */
+}
+
+html, body {
+  height: 100%; /* Ensures the full height of the page */
+  margin: 0; /* Removes default margin */
+  padding: 0; /* Removes default padding */
+}
+
+#root, .App {
+  height: 100%; /* Ensures the full height for root and App container */
+  display: flex;
+  flex-direction: column; /* Organizes children in a column */
+}
+
+.App > * {
+  flex-shrink: 0; /* Prevents children from shrinking */
+}
+
+main {
+  flex-grow: 1; /* Allows main content to expand and push the footer down */
+  /* Add additional styling for your main content area */
+}
