@@ -1,0 +1,35 @@
+/* SignUp.css */
+
+:root {
+    --color-white: #FFFFFF;
+    --color-green: #97B498; /* Adjust the shade of green as needed */
+    --color-light-green: #a9c9a4; /* Lighter shade of green for hover */
+    --color-dark-green: #6b7f6e; /* Darker shade of green */
+    --color-black: #000000;
+}
+
+.sign-up-form {
+    max-width: 500px; /* Increased form width */
+    margin: auto;
+    padding: 30px; /* Increased padding inside the form */
+    background-color: var(--color-white);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.sign-up-form h2 {
+    color: var(--color-green);
+    text-align: center;
+    margin-bottom: 20px; /* Added bottom margin for spacing */
+}
+
+.sign-up-form input{
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    width: 100%; /* Full width of the parent container */
+    padding: 15px; /* Uniform padding */
+    margin: 10px 0;
+    border: 1px solid var(--color-green);
+    border-radius: 5px;
+}
+
+

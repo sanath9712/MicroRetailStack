@@ -1,21 +1,28 @@
 import React from 'react';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/js/Header';
 import Footer from './components/js/Footer';
+import Home from './components/js/Home'; // Your home page component
+import Login from './components/js/Login'; // Your login page component
+import SignUp from './components/js/signup';
+
+// Your signup page component
+import './App.css';
 
 function App() {
-  return (
-      <div className="App">
-          <Header />
-          <div className="main-content">
-              <div className="buttons-container">
-                  <button className="btn">New User</button>
-                  <button className="btn">Sign In</button>
-              </div>
-          </div>
-          <Footer />
-      </div>
-  );
+    return (
+        <Router>
+            <div className="App">
+                <Header />
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/signup" element={<SignUp />} />
+                </Routes>
+                <Footer />
+            </div>
+        </Router>
+    );
 }
 
 export default App;

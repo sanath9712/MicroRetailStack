@@ -1,13 +1,15 @@
 .header {
     background-color: var(--color-green);
     color: var(--color-white); /* Text color for content in header */
-    padding: 1rem;
+    padding: 0.5rem 1rem 0.1rem; /* Reduced top and bottom padding */
     text-align: center;
-    height: 60px;
+    height: 60px; /* You might want to adjust this if the header height changes */
 }
 
 .header h1 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     color: var(--color-white); /* Ensure this contrasts with the background */
+    margin-top: 0; /* Remove top margin */
+    /* If needed, adjust line-height for better spacing */
 }

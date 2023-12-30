@@ -3,6 +3,7 @@ const morgan = require('morgan');
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 const connectDB = require('./database'); // Import the connectDB function
+const cors = require('cors');
 
 dotenv.config(); // Load environment variables
 
@@ -10,7 +11,7 @@ dotenv.config(); // Load environment variables
 connectDB();
 
 const app = express();
-
+app.use(cors({ origin: 'http://localhost:3001' }));
 app.use(morgan('dev')); // Logging HTTP requests
 app.use(express.json()); // Parse JSON bodies
 
