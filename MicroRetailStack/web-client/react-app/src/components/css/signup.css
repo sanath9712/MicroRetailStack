@@ -16,11 +16,14 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
 }
-
+h2{
+    font-family: 'Montserrat', sans-serif;
+}
 .sign-up-form h2 {
     color: var(--color-green);
     text-align: center;
     margin-bottom: 20px; /* Added bottom margin for spacing */
+    font-family: 'Montserrat', sans-serif;
 }
 
 .sign-up-form input {
