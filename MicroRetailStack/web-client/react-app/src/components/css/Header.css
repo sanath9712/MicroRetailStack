@@ -13,3 +13,10 @@
     margin-top: 0; /* Remove top margin */
     /* If needed, adjust line-height for better spacing */
 }
+
+.user-info {
+    position: absolute;
+    top: 0;
+    right: 0;
+    /* Additional styling as needed */
+}

@@ -6,11 +6,14 @@ import Home from './components/js/Home'; // Your home page component
 import Login from './components/js/Login'; // Your login page component
 import SignUp from './components/js/signup';
 import './components/css/globalStyles.css'
+import { UserProvider } from './contexts/UserContext';
+//import { UserContext } from '../../contexts/UserContext';
 // Your signup page component
 import './App.css';
 
 function App() {
     return (
+        <UserProvider>
         <Router>
             <div className="App">
                 <Header />
@@ -24,6 +27,7 @@ function App() {
                 <Footer />
             </div>
         </Router>
+        </UserProvider>
     );
 }
 

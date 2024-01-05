@@ -1,8 +1,13 @@
-import React, { useState } from 'react';
-import '../css/signup.css'; // Reusing the same CSS file as SignUp
+import React, { useContext, useState } from 'react'; // import useState
+import { useNavigate } from 'react-router-dom'; // import useNavigate
+import '../css/signup.css';
 import '../css/globalStyles.css';
+import { UserContext } from '../../contexts/UserContext';
+
 
 function Login() {
+    const { setUser } = useContext(UserContext);
+    const navigate = useNavigate(); // create navigate instance
     const [formData, setFormData] = useState({
         email: '',
         password: ''
@@ -17,7 +22,7 @@ function Login() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const url = 'http://localhost:3000/api/users/login'; // Updated API URL for login
+        const url = 'http://localhost:3000/api/users/login';
         try {
             const response = await fetch(url, {
                 method: 'POST',
@@ -31,7 +36,10 @@ function Login() {
                 setIsError(false);
                 setPopupMessage('Success: ' + data.message);
                 setShowPopup(true);
-                // Additional login success actions like redirection or state updates can be added here
+
+                // Set user context and redirect to home page
+                setUser({ username: 'Logged In User' }); // Update with actual user data
+                navigate('/'); // Redirect to the homepage
             } else {
                 setIsError(true);
                 setPopupMessage('Error: ' + data.message);
